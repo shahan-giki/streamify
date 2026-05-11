@@ -70,3 +70,5 @@ See **[DOCUMENTATION.md](DOCUMENTATION.md)** for the full class reference, archi
 ---
 
 *GIKI — OOP Semester Project · C++17 · Windows*
+# Streamify
+Streamify is a C++ console-based video streaming platform developed as ann OOPs semester project. It allows users to register, upload and watch videos, create playlists (queues), and interact with other creators videos through likes and comments while implementing OOP concepts and stl.
