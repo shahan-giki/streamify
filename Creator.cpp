@@ -9,6 +9,7 @@
 //              callers outside the class never see it.
 // ============================================================================
 #include "Creator.h"
+#include "UI.h"
 #include <vector>
 #include <filesystem>
 
@@ -21,11 +22,7 @@ using std::vector;
 using std::getline;
 
 // ============================================================================
-// Constructor
-// OOP: Inheritance — Account(uname, pwd, "creator") initialises the base-class
-//      portion of this object (username, password, role).
-//      Creator's own members (the three references) are then initialised in
-//      the member-initialiser list.
+// Constructor — OOP: Inheritance
 // ============================================================================
 Creator::Creator(const string& uname, const string& pwd,
                  VideoLibrary& vl, CategoryTree& ct, VideoGraph& vg)
@@ -33,21 +30,17 @@ Creator::Creator(const string& uname, const string& pwd,
       videoLibrary(vl), categoryTree(ct), videoGraph(vg) {}
 
 // ============================================================================
-// displayMenu — Polymorphism
-// OOP: This override provides Creator-specific menu options.
-//      Because it is declared virtual in Account, calling displayMenu() on an
-//      Account* that actually points to a Creator runs THIS function at runtime.
+// displayMenu — OOP: Polymorphism (override)
 // ============================================================================
 void Creator::displayMenu() {
-    cout << "\n ====== Creator Menu ======\n";
-    cout << " 1. Upload Video from Folder\n";
-    cout << " 2. View Uploaded Videos\n";
-    cout << " 3. Add Category\n";
-    cout << " 4. Upload Video to Category\n";
-    cout << " 5. View Category Videos\n";
-    cout << " 6. View Video Connections\n";
-    cout << " 7. Logout\n";
-    cout << " Enter your choice: ";
+    printHeader("  CREATOR MENU  [ " + getUsername() + " ]", Color::CYAN);
+    printOption(1, "Upload Video from Folder",      Color::GREEN,   Color::WHITE);
+    printOption(2, "View Uploaded Videos",          Color::CYAN,    Color::WHITE);
+    printOption(3, "Add Category  [AVL Tree]",      Color::YELLOW,  Color::WHITE);
+    printOption(4, "Upload Video to Category",      Color::YELLOW,  Color::WHITE);
+    printOption(5, "View Category Videos",          Color::MAGENTA, Color::WHITE);
+    printOption(6, "View Video Connections [Graph]",Color::BLUE,    Color::WHITE);
+    printOption(7, "Logout",                        Color::RED,     Color::WHITE);
 }
 
 // ============================================================================

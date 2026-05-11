@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build Streamify",
+            "command": "E:/c++/Compiler/ucrt64/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c++17",
+                "-g",
+                "Account.cpp",
+                "Video.cpp",
+                "VideoLibrary.cpp",
+                "VideoGraph.cpp",
+                "WatchHistory.cpp",
+                "Category.cpp",
+                "Creator.cpp",
+                "Viewer.cpp",
+                "main.cpp",
+                "-o",
+                "Streamify.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles all Streamify .cpp files with g++ (C++17)"
+        }
+    ]
+}

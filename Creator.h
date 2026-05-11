@@ -15,6 +15,8 @@
 #include "VideoLibrary.h"
 #include "Category.h"
 #include "VideoGraph.h"
+#include <vector>
+#include <string>
 
 // OOP: Inheritance — Creator publicly inherits Account.
 //      It gains username/password management and the role field for free,
@@ -31,6 +33,9 @@ private:
     VideoLibrary& videoLibrary;  // Shared library of all uploaded videos
     CategoryTree& categoryTree;  // Shared AVL tree of categories
     VideoGraph&   videoGraph;    // Shared graph of video relationships
+
+    // OOP: Encapsulation — private helper; hidden from all external callers
+    std::vector<std::string> scanFolder(const std::string& folderPath) const;
 
 public:
     // OOP: Inheritance — constructor explicitly calls Account's constructor
