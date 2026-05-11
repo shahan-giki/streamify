@@ -1,4 +1,4 @@
-# Streamify — C++ Console Video Streaming Platform
+# 🎬 Streamify — C++ Console Video Streaming Platform
 
 > A C++17 console video streaming platform demonstrating **OOP** (Encapsulation, Inheritance, Polymorphism, Abstraction) and **DSA** (HashMap, AVL Tree, Graph, Stack, Queue).
 
