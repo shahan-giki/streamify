@@ -1,0 +1,23 @@
+# Build output
+Streamify.exe
+*.exe
+*.o
+*.obj
+
+# Video files (large binaries — keep the folder, ignore the content)
+videos/*.mp4
+videos/*.mkv
+videos/*.avi
+videos/*.wmv
+
+# VSCode user settings (keep tasks.json and c_cpp_properties.json)
+.vscode/settings.json
+.vscode/launch.json
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Debug/temp
+*.pdb
+*.ilk
