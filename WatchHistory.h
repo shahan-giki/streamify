@@ -1,8 +1,5 @@
-// ============================================================================
-// WatchHistory.h — Stack-based Watch History
-// OOP Concept: Encapsulation — Stack DSA wrapped inside its own class
-// DSA: Stack (LIFO — Last watched is first to display)
-// ============================================================================
+
+
 #ifndef WATCHHISTORY_H
 #define WATCHHISTORY_H
 
@@ -10,31 +7,35 @@
 #include <string>
 #include <vector>
 
-class WatchHistory {
+using namespace std;
+
+class WatchHistory
+{
 private:
-    std::vector<std::string> elements; // Internal stack storage
+    vector<string> history;   // Stack storage
 
 public:
-    // Push a video title onto the watch history stack
-    void push(const std::string& title);
 
-    // Pop the most recent entry from watch history
+    // Add video to history
+    void push(string title);
+
+    // Remove latest watched video
     void pop();
 
-    // Get the most recently watched video
-    std::string top() const;
+    // Show latest watched video
+    void top();
 
-    // Check if watch history is empty
-    bool isEmpty() const;
+    // Check if history is empty
+    bool isEmpty();
 
-    // Get the number of entries in watch history
-    int size() const;
+    // Total videos watched
+    int size();
 
-    // Display all watch history entries (most recent first)
-    void display() const;
+    // Display complete history
+    void display();
 
-    // Clear all watch history
+    // Clear all history
     void clear();
 };
 
-#endif // WATCHHISTORY_H
+#endif
