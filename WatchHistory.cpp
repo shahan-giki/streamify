@@ -1,60 +1,77 @@
-// ============================================================================
-// WatchHistory.cpp — Stack-based Watch History implementation
-// OOP Concept: Encapsulation — Internal stack logic hidden from caller
-// DSA: Stack (LIFO)
-// ============================================================================
+
+
 #include "WatchHistory.h"
-#include <stdexcept>
 
-using std::cout;
-using std::string;
+using namespace std;
 
-// Push a video title onto the watch history stack
-void WatchHistory::push(const string& title) {
-    elements.push_back(title);
+// Add video to stack
+void WatchHistory::push(string title)
+{
+    history.push_back(title);
+
+    cout << "Video added to watch history.\n";
 }
 
-// Pop the most recent entry from watch history
-void WatchHistory::pop() {
-    if (!elements.empty()) {
-        elements.pop_back();
-    } else {
-        cout << " Watch history is empty.\n";
+// Remove latest watched video
+void WatchHistory::pop()
+{
+    if (history.empty())
+    {
+        cout << "Watch history is empty.\n";
+    }
+    else
+    {
+        cout << "Removed: " << history.back() << endl;
+        history.pop_back();
     }
 }
 
-// Get the most recently watched video (Encapsulation — controlled access)
-string WatchHistory::top() const {
-    if (!elements.empty()) {
-        return elements.back();
+// Show latest watched video
+void WatchHistory::top()
+{
+    if (history.empty())
+    {
+        cout << "Watch history is empty.\n";
     }
-    throw std::runtime_error(" Watch history is empty.");
+    else
+    {
+        cout << "Most recent video: " << history.back() << endl;
+    }
 }
 
-// Check if watch history is empty
-bool WatchHistory::isEmpty() const {
-    return elements.empty();
+// Check if stack is empty
+bool WatchHistory::isEmpty()
+{
+    return history.empty();
 }
 
-// Get the number of entries
-int WatchHistory::size() const {
-    return static_cast<int>(elements.size());
+// Return total videos
+int WatchHistory::size()
+{
+    return history.size();
 }
 
-// Display all watch history entries (most recent first — Stack behavior)
-void WatchHistory::display() const {
-    if (elements.empty()) {
-        cout << " No videos watched yet.\n";
+// Display watch history
+void WatchHistory::display()
+{
+    if (history.empty())
+    {
+        cout << "No videos watched yet.\n";
         return;
     }
-    cout << " Watch History (most recent first):\n";
-    for (int i = static_cast<int>(elements.size()) - 1; i >= 0; --i) {
-        cout << "   " << (static_cast<int>(elements.size()) - i) << ". " << elements[i] << "\n";
+
+    cout << "\n===== Watch History =====\n";
+
+    for (int i = history.size() - 1; i >= 0; i--)
+    {
+        cout << history.size() - i << ". " << history[i] << endl;
     }
 }
 
-// Clear all watch history
-void WatchHistory::clear() {
-    elements.clear();
-    cout << " Watch history cleared.\n";
+// Clear history
+void WatchHistory::clear()
+{
+    history.clear();
+
+    cout << "Watch history cleared.\n";
 }
