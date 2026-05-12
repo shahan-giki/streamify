@@ -1,6 +1,6 @@
 # Streamify — Project Documentation
 
-> **Course**: Object-Oriented Programming (CS-200)  
+> **Course**: Object-Oriented Programming (CS-112)  
 > **Institution**: Ghulam Ishaq Khan Institute of Engineering Sciences & Technology (GIKI)  
 > **Type**: Semester Project (OOP + DSA Integration)  
 > **Language**: C++17  
